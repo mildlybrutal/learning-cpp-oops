@@ -4,7 +4,7 @@ using namespace std;
 class AbstractEmployee {
   virtual void AskForPromotion() = 0;
 };
-class Employee: AbstractEmployee {
+class Employee : AbstractEmployee {
 private:
   string Name;
   string Company;
@@ -38,18 +38,33 @@ public:
     Company = company;
     Age = age;
   }
+
+  void AskForPromotion() {
+    if (Age >= 30) {
+      cout << "Promoted" << endl;
+    } else {
+      cout << "Not Promoted" << endl;
+    }
+  }
 };
 
+class Developer : public Employee {
+public:
+  string favProgLanguage;
+  Developer(string name, string company, int age, string favProgLanguage)
+      : Employee(name, company, age) {
+    favProgLanguage = favProgLanguage;
+  }
+  void fixBug() {
+    cout << getName() << " fixed bug using " << favProgLanguage << endl;
+  }
+};
 int main() {
-  Employee employee1 =
-      Employee("Akash", "Google", 18); // Variable of Employee class
-  // employee1.introduceYourself();       // Calling the function of Employee
-  // class
-  Employee employee2 = Employee("Sourav", "Amazon", 20);
-  // employee2.introduceYourself();
-
-  employee1.setAge(15);
-  cout << employee1.getName() << " is " << employee1.getAge() << " years old."
-       << endl;
+  // Employee employee1 =
+  //     Employee("Akash", "Google", 18); // Variable of Employee class
+  // // employee1.introduceYourself();       // Calling the function of
+  // Employee Employee employee2 = Employee("Sourav", "Amazon", 35);
+  Developer d = Developer("Akash", "Amazon", 22, "JS");
+  d.fixBug();
   return 0;
 }
