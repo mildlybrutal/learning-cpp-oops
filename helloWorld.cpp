@@ -1,8 +1,19 @@
-#include <iostream> // include the iostream library -> IO header
+#include <bits/stdc++.h>
+using namespace std;
 
-int main() {
-  std::cout << "Hello World!"; // Opereator << is used to insert the string into the output stream represented by std::cout
-  //operator << is binary operator that takes two operands. The left operand is the std::cout object and the right operand is the string "Hello World!"
+int main()
+{
+  string name, gender;
+  int age;
+  cin >> name;
+  cin >> age;
+  cin >> gender;
 
+  for (char &c : name)
+    c = toupper(c);
+  for (char &c : gender)
+    c = toupper(c);
+
+  cout << name << " " << age << " " << gender;
   return 0;
 }

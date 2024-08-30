@@ -1,0 +1,1 @@
+{"name":"Local: helloWorld","url":"/home/akash/Btech/oops/helloWorld.cpp","tests":[{"id":1723523092762,"input":"akash 18 male","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/akash/Btech/oops/helloWorld.cpp","group":"local","local":true}
