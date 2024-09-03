@@ -4,7 +4,10 @@ using namespace std;
 class Student
 {
 private:
-	int a, b;
+	int a;
+
+protected:
+	int b;
 
 public:
 	void setData(int n1, int n2)
@@ -21,9 +24,33 @@ class Teacher
 	int c;
 
 public:
-	int display(Student s)
+	int mean(Student s)
 	{
 		return (s.a + s.b) / 2;
+	}
+
+	int sum(Student s)
+	{
+		return s.a + s.b;
+	}
+
+	int sub(Student s)
+	{
+		return s.a - s.b;
+	}
+
+	int multiply(Student s)
+	{
+		return s.a * s.b;
+	}
+
+	int divide(Student s)
+	{
+		if (s.b != 0)
+		{
+			return s.a / s.b;
+		}
+		return -1;
 	}
 };
 
@@ -34,7 +61,10 @@ int main()
 	int n1, n2;
 	cin >> n1 >> n2;
 	s.setData(n1, n2);
-	cout << t.display(s);
-
+	cout << t.mean(s) << endl;
+	cout << t.sum(s) << endl;
+	cout << t.sub(s) << endl;
+	cout << t.multiply(s) << endl;
+	cout << t.divide(s) << endl;
 	return 0;
 }
